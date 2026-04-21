@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.fzu.sosd.web.infrastructure.persistence.mybatis.competition.mapper.TeamInfoMapper">
+
+    <select id="selectByCompetitionId"
+            parameterType="java.lang.Integer"
+            resultType="cn.edu.fzu.sosd.web.infrastructure.persistence.mybatis.competition.entity.TeamInfoEntity">
+        SELECT Id,
+               TaskId,
+               Name,
+               ProjectName,
+               LeaderName,
+               TeamMembers,
+               LeaderId,
+               Topic,
+               Advisor,
+               Email,
+               RewardResult,
+               DocUrl,
+               CreatedAt,
+               UpdatedAt
+        FROM TeamInfo
+        WHERE TaskId = #{competitionId}
+    </select>
+
+</mapper>
