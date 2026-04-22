@@ -28,3 +28,6 @@ replay_pid*
 
 # Build output
 target/
+
+# Local frontend workspace
+frontend/

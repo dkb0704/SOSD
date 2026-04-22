@@ -50,7 +50,7 @@ public class MybatisTeamRepository implements TeamRepository {
                 return true;
             }
 
-            // 组员有人重复参见
+            // 组员有人重复参加
             Set<String> memberIds = parseMemberIds(team.getTeamMembers());
             for (String memberId : memberIds) {
                 if (userIds.contains(memberId)) {

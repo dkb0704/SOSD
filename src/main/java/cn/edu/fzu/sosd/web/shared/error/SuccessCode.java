@@ -10,8 +10,9 @@ package cn.edu.fzu.sosd.web.shared.error;
 public enum SuccessCode implements ResultCode {
 
     SUCCESS(200, "操作成功"),
-    TEAM_REGISTER_SUCCESS(20001, "报名成功"),
-    TEAM_QUERY_SUCCESS(20002, "查询成功");
+    LOGIN_SUCCESS(20001, "登录成功"),
+    TEAM_REGISTER_SUCCESS(20002, "报名成功"),
+    TEAM_QUERY_SUCCESS(20003, "查询成功");
 
     private final int code;
     private final String message;

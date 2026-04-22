@@ -1,6 +1,8 @@
+# 服务基础配置
 server:
   port: 5083
 
+# Spring 与数据库配置
 spring:
   application:
     name: sosd
@@ -10,7 +12,16 @@ spring:
     password: dkb4sb!!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+# MyBatis-Plus 配置
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*.xml
   configuration:
     map-underscore-to-camel-case: false
+
+# 安全配置
+security:
+  jwt:
+    # 当前阶段用于登录和接口联调的 JWT 密钥
+    key: web@sosd
+    # todo 开发方便 过期时间七天 之后修改
+    expire-seconds: 604800

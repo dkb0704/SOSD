@@ -44,6 +44,17 @@ public class R<T> implements Serializable {
         return build(code.getCode(), code.getMessage(), data);
     }
 
+    //不带数据的失败返回
+    public static <T> R<T> fail(ResultCode code) {
+        return build(code.getCode(), code.getMessage(), null);
+    }
+
+    //带数据的失败返回
+    public static <T> R<T> fail(ResultCode code, T data) {
+        return build(code.getCode(), code.getMessage(), data);
+    }
+
+    //便于全局异常处理器的操作
     public static <T> R<T> fail(int code, String msg) {
         return build(code, msg, null);
     }

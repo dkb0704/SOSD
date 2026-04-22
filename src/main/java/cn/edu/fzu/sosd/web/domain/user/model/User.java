@@ -1,4 +1,4 @@
-package cn.edu.fzu.sosd.web.shared.security;
+package cn.edu.fzu.sosd.web.domain.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,21 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.List;
 
 /**
- * class name: CurrentUser
+ * class name: User
  *
  * @author: dkb
- * @description: 当前用户信息
- * @date: 2026/4/18 14:45
+ * @description:
+ * @date: 2026/4/22 13:13
  */
 //todo 为了兼容旧代码，暂时使用这种形式  直接全量返回用户信息的方式不太好
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class CurrentUser {
+@NoArgsConstructor
+public class User {
     /**
      * 用户主键ID。
      */
@@ -35,7 +34,6 @@ public class CurrentUser {
      * 用户昵称。
      */
     private String name;
-
 
     //不太确定这个字段是什么 可能是头像信息
     private String avatar;

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.fzu.sosd.web.infrastructure.persistence.mybatis.user.mapper.UserMapper">
+
+    <select id="selectById"
+            resultType="cn.edu.fzu.sosd.web.infrastructure.persistence.mybatis.user.entity.UserEntity">
+        SELECT
+            Id,
+            Email,
+            Name,
+            Password,
+            Avatar,
+            Gender,
+            QQ,
+            Mobile,
+            Major,
+            StudentId,
+            OpenId,
+            LastModifyTime
+        FROM User
+        WHERE Id = #{id}
+    </select>
+
+    <select id="selectByIdAndPassword"
+            resultType="cn.edu.fzu.sosd.web.infrastructure.persistence.mybatis.user.entity.UserEntity">
+        SELECT
+            Id,
+            Email,
+            Name,
+            Password,
+            Avatar,
+            Gender,
+            QQ,
+            Mobile,
+            Major,
+            StudentId,
+            OpenId,
+            LastModifyTime
+        FROM User
+        WHERE Id = #{id}
+          AND Password = #{password}
+    </select>
+
+    <select id="selectByStudentIdAndPassword"
+            resultType="cn.edu.fzu.sosd.web.infrastructure.persistence.mybatis.user.entity.UserEntity">
+        SELECT
+            Id,
+            Email,
+            Name,
+            Password,
+            Avatar,
+            Gender,
+            QQ,
+            Mobile,
+            Major,
+            StudentId,
+            OpenId,
+            LastModifyTime
+        FROM User
+        WHERE StudentId = #{studentId}
+          AND Password = #{password}
+    </select>
+
+</mapper>
